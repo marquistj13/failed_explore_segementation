@@ -7,10 +7,9 @@ import matplotlib.pyplot as plt
 import skimage
 from skimage import io
 
-
 # root_dir = '/Users/mprat/personal/VOCdevkit/VOCdevkit/VOC2012/'
 root_dir = r"E:\VOCtrainval_11-May-2012\VOCdevkit\VOC2012"
-img_dir = os.path.join(root_dir, 'JPEGImages')
+img_dir = os.path.join(root_dir, 'JPEGImages') + "\\"
 ann_dir = os.path.join(root_dir, 'Annotations')
 set_dir = os.path.join(root_dir, 'ImageSets', 'Main')
 
@@ -96,7 +95,7 @@ def load_annotation(img_filename):
     with open(annotation_file_from_img(img_filename)) as f:
         xml = f.readlines()
     xml = ''.join([line.strip('\t') for line in xml])
-    return BeautifulSoup(xml)
+    return BeautifulSoup(xml, "lxml")
 
 
 # TODO: implement this
@@ -119,7 +118,9 @@ def load_img(img_filename):
     Returns:
         np array of float32: an image as a numpy array of float32
     """
-    img_filename = os.path.join(img_dir, img_filename)
+    # print img_dir
+    # print img_filename
+    # img_filename = os.path.join(img_dir, img_filename)
     img = skimage.img_as_float(io.imread(
         img_filename)).astype(np.float32)
     if img.ndim == 2:
@@ -184,7 +185,7 @@ def _load_data(category, data_type=None):
                     ymax = int(bbox.findChildren('ymax')[0].contents[0])
                     data.append([fname, xmin, ymin, xmax, ymax])
     df = pd.DataFrame(
-    data, columns=['fname', 'xmin', 'ymin', 'xmax', 'ymax'])
+        data, columns=['fname', 'xmin', 'ymin', 'xmax', 'ymax'])
     # df.to_csv(filename)
     return df
 

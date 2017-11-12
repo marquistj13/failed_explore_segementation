@@ -1,9 +1,7 @@
 ## -*- coding: utf-8 -*-
 import sys
-
-import voc_utils
-
 sys.path.append("..")
+import voc_utils
 from skimage.io import imread
 from skimage.io import imshow
 import matplotlib.pyplot as plt
