@@ -10,7 +10,7 @@
 *.gz
 
 # Directories for explore
-test
+# test
 
 # images,movies
 #*.png
