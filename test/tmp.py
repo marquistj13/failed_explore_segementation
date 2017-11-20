@@ -7,9 +7,9 @@ from skimage.io import imshow
 import matplotlib.pyplot as plt
 
 
-imgPath = r"E:\VOCtrainval_11-May-2012\VOCdevkit\VOC2012"
-imgSegIndex = imgPath + r"\ImageSets\Segmentation"
-imgSetPath = imgPath + r"\JPEGImages"
+# imgPath = r"D:\dataset\VOCtrainval_11-May-2012\VOCdevkit\VOC2012"
+# imgSegIndex = imgPath + r"\ImageSets\Segmentation"
+# imgSetPath = imgPath + r"\JPEGImages"
 #
 # f = open(imgSegIndex + r"\train.txt", 'r')
 # tmp = f.read()

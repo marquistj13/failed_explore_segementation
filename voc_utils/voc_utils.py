@@ -8,7 +8,7 @@ import skimage
 from skimage import io
 
 # root_dir = '/Users/mprat/personal/VOCdevkit/VOCdevkit/VOC2012/'
-root_dir = r"E:\VOCtrainval_11-May-2012\VOCdevkit\VOC2012"
+root_dir = r"D:\dataset\VOCtrainval_11-May-2012\VOCdevkit\VOC2012"
 img_dir = os.path.join(root_dir, 'JPEGImages') + "\\"
 ann_dir = os.path.join(root_dir, 'Annotations')
 set_dir = os.path.join(root_dir, 'ImageSets', 'Main')
